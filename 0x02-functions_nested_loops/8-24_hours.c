@@ -1,31 +1,27 @@
 #include "main.h"
 
 /**
- * jack_bauer - prints every minute of the day
- * Description: prints every minute of the day
+ * jack_bauer - prints every minute of a given day
+ * @start: the start time in minutes since midnight
+ * @end: the end time in minutes since midnight
+ *
  * Return: void
  */
 
-void jack_bauer(void)
+void jack_bauer(int start, int end)
 {
-	int a, b, c, d;
-	for (a = 48; a <= 50; a++)
-	{
-		for (b = 48; b <= 57; b++)
+	int hours, minutes;
+
+		for (hours = start / 60; hours <= end / 60; hour++)
 		{
-			for (c = 48; c <= 53; c++)
+			for (minutes = 0; minutes < 60; minutes++)
 			{
-				for (d = 48; d <= 57; d++)
-				{
-			if (a >= 50 && b >= 52)
-				break;
-			_putchar(a);
-			_putchar(b);
-			_putchar(58);																				_putchar(c);
-			_putchar(d);
-			_putchar('\n');
+				_putchar((hours / 10) + '0');
+				_putchar((hours % 10) + '0');
+				_putchar(':');
+				_putchar((minutes / 10) + '0');
+				_putchar((minutes % 10) + '0');
+				_putchar('\n');
+			}
 		}
-	}
-		}
-	}
 }
